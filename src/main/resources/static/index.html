@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/62c7e0a3f7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    
+    <title>Gestion empleados </title>
+  </head>
+  <body>
+    <!-- BACKGROUND -->
+    
+    <main class="main">
+      <h3 class="display-6 mb-4 text-center">Gestion de empleados</h3>
+      <div class="card"></div>
+      <table class="table table-dark table-striped text-center" id="employees">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Locacion</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Ingreso</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+      <div class="mb-3 card">
+        <div class="card-body">
+          <h4 class="mb-4">Registrar</h4>
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="name"
+            placeholder="nombre"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="last-name"
+            placeholder="Apellido"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="location"
+            placeholder="Locacion"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="sex"
+            placeholder="Sexo"
+          />
+          <input
+            type="date"
+            class="form-control mb-4"
+            id="date"
+            placeholder="Fecha"
+          />
+          <button type="button" onclick="registrarEmpleado()" class="btn btn-dark col-12">Enviar</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <input
+            type="text"
+            class="col form-control mb-4 m-3"
+            id="filtro"
+            placeholder="dato"
+          />
+          <input type="date" class="form-control col mb-4 m-3" id="from" />
+          <input type="date" class="form-control col mb-4 m-3" id="to" />
+        </div>
+        <button type="button" class="btn btn-dark col-12"  id="Filtrar">Filtrar</button>
+        <input
+            type="text"
+            class="col form-control mb-4 m-3"
+            id="IdSelector"
+            placeholder="ID"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="nameAct"
+            placeholder="nombre"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="last-nameAct"
+            placeholder="Apellido"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="locationAct"
+            placeholder="Locacion"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="sexAct"
+            placeholder="Sexo"
+          />
+          <input
+            type="text"
+            class="form-control mb-4"
+            id="stateAct"
+            placeholder="state"
+          />
+          <input
+            type="date"
+            class="form-control mb-4"
+            id="dateAct"
+            placeholder="Fecha"
+          />
+          <button type="button" class="btn btn-dark col-12"  id="Actualizar">Actualizar</button>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/demo/employees.js"></script>
+  </body>
+</html>
