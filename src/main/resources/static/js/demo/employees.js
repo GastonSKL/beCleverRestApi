@@ -59,6 +59,8 @@ const cargarEmpleadosFiltro = async(dato) =>{
   let filteredEmployees = newEmployees.filter(employ => employ.name.toLowerCase().includes(dato.toLowerCase()));
   
   console.log(filteredEmployees);
+
+  
   
 
   
@@ -87,6 +89,8 @@ document.querySelector('#employees tbody').innerHTML += setEmployee;
 
 
 }
+
+
 
 document.querySelector('#filtro').addEventListener('keyup',e=>{
   console.log(e.target.value)
@@ -111,7 +115,9 @@ const cargarEmpleadosFiltroFecha = async(startDate, endDate) =>{
   
   console.log(filteredEmployees);
   
-
+  let contadorAlta = 0;
+  let contadorMasculino = 0;
+  let contadorFemenino = 0;
   
 
   document.querySelector('#employees tbody').innerHTML = null;
@@ -119,7 +125,15 @@ const cargarEmpleadosFiltroFecha = async(startDate, endDate) =>{
   filteredEmployees.forEach(employee => {
     let botonEliminar = `<a href="#" onClick="eliminarEmpleado(${employee.id})" class="btn btn-danger btn-circle btn-sm">
                             <i class="fas fa-trash"></i>
-                        </a>`
+                        </a>`;
+    if(employee.state == true && employee.sex == true){
+      contadorAlta++;
+      contadorMasculino++;
+    }else if(employee.state == true && employee.sex == false){
+      contadorAlta++;
+      contadorFemenino++;
+    }
+
     let setEmployee = `
 <tr>
   <td>${employee.id}</td>
@@ -134,10 +148,17 @@ const cargarEmpleadosFiltroFecha = async(startDate, endDate) =>{
   </td>
 </tr>`;
 document.querySelector('#employees tbody').innerHTML += setEmployee;
+
   });
+  let promedioMasculino = contadorMasculino/contadorAlta;
+  let promedioFemenino = contadorFemenino/contadorAlta;
+  
 
-
+  document.querySelector('#promedio').innerHTML += `<h4>El promedio de hombres de alta fue de : ${Math.round(promedioMasculino*100)} %</h4>`;
+  document.querySelector('#promedio').innerHTML += `<h4>El promedio de mujeres de alta fue de : ${Math.round(promedioFemenino*100)} %</h4>`;
 }
+
+
 
 const btnFiltrar = document.querySelector('#Filtrar');
 
